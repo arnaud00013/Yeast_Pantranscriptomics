@@ -5,7 +5,7 @@
 
 Pooled RNA-sequencing of 21 non-filamentous yeast species spanning all the taxonomic orders of the subphylum *Saccharomycotina*, grown in rich medium (YPD), showing that most biological pathways evolve while conserving their transcriptomic cohesion and that variation in gene content only occasionally enables transcriptomic divergence, mostly in pathways of low prevalence across the subphylum.
 
-![Phylogeny of the 21 species and their pool assignment](Study_design/Phylogeny_21_species_pools.png)
+![Phylogeny of the 21 species and their pool assignment](Phylogeny_21_species_pools.png)
 
 ## Study design
 We chose the number of genes and species to profile with power analyses targeting the two main comparisons of the study: (1) the difference in expression variability between the core and accessory genomes (Wilcoxon rank-sum test; ~4000 genes or orthogroups needed for power >= 0.8 at very low effect size) and (2) per-orthogroup or per-pathway regressions on pairwise species comparisons (n = 20 species for a power of 0.8 at f = 0.14). The species were then drawn at random from the collection of Opulente et al. (2024) among non-filamentous, fast-growing species until every taxonomic order was represented. 
