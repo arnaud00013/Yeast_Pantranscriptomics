@@ -23,7 +23,7 @@ Each species was grown separately to mid-log phase in YPD and total RNA was extr
   - Read cleaning (fastp), splice-aware mapping to the multi-species reference (STAR), splitting of the alignments per species (samtools) and per-gene read pair counts (featureCounts)
   - Dependencies: StdEnv/2023, fastqc, fastp, star, samtools, subread and multiqc
 
-- Binning quality control: the reads left unmapped by STAR were profiled with CCMetagen/kma against a database of the 21 species. The QC report is *Yeast_subphylum_pan_transcriptomic_study_sample_preprocessing_and_QC.html* and its figures are in *RNA_sequencing/QC_figures*
+- Binning quality control: the reads left unmapped by STAR were profiled with CCMetagen/kma against a database of the 21 species to make sure that mapping filters with STAR did not exclude quality reads. We also made sure that the mapped species reads were expected in each sample where they were detected.
   - Dependencies: kma and CCMetagen
 
 -The reference fasta and gtf files for the 21 species: Opulente et al. (2024), [doi:10.1126/science.adj4503](https://doi.org/10.1126/science.adj4503), [figshare collection 6714042](https://figshare.com/collections/Genomic_and_ecological_factors_shaping_specialism_and_generalism_across_an_entire_subphylum/6714042)
@@ -40,7 +40,7 @@ Each species was grown separately to mid-log phase in YPD and total RNA was extr
 
 ## Downstream analyses
 - Rscript Yeast_pan_transcriptomics_analysis.R *(to be added)*
-  - Validation of the binned expression data (PCA distance and pairwise R² vs phylogenetic distance, replicates vs non-replicates; *QC_figures/Sample_pairs_expr_Rsq_for_replicates_vs_nonreplicates_in_YPD.svg*)
+  - Validation of the binned expression data (PCA distance and pairwise R² vs phylogenetic distance, similarity between samples from the same species > similarity between samples from the same mixture/pool, no batch effects, etc)
   - Evolutionary force acting on each pathway: R² vs phylogenetic distance slope and Bray-Curtis distances compared to 999 random orthogroup sets of the same size, with FDR correction and power estimates (pwr, MKpower)
   - Transcriptomic trajectory of expanding orthogroups (Jensen-Shannon ESD and R² slope Spearman markers over sliding copy number thresholds)
   - Dependencies
@@ -50,6 +50,6 @@ Each species was grown separately to mid-log phase in YPD and total RNA was extr
     - Python 3.6; Packages: sys, multiprocessing, contextlib, csv, gzip, os, scipy, numpy, sklearn, pandas, datetime, math, and random.
       
 ## Citation
-N'Guessan, A. (2026). *Pan-transcriptomics in the yeast subphylum: Variation in gene content occasionally enables transcriptomic divergence among broadly cohesive pathways.* Chapter 4 in PhD thesis, Department of Cell & Systems Biology, University of Toronto.
+N'Guessan, A. (2026). *Pan-transcriptomics in the yeast subphylum: Variation in gene content occasionally enables transcriptomic divergence among broadly cohesive pathways.* biorxiv DOI:XXXXXXXX
 
 Opulente, D. A. et al. (2024). Genomic factors shape carbon and nitrogen metabolic niche breadth across Saccharomycotina yeasts. *Science* 384, eadj4503.
