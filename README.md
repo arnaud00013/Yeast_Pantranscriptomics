@@ -45,8 +45,8 @@ Each species was grown separately to mid-log phase in YPD and total RNA was extr
   - Transcriptomic trajectory of expanding orthogroups (Jensen-Shannon ESD and R² slope Spearman markers over sliding copy number thresholds)
   - Dependencies
     - r/4.2.2; Libraries ggplot2, seqinr, RColorBrewer, randomcoloR, FD, vegan, gplots, lmPerm, ggpubr, gridExtra, cluster, tidyr, doParallel, foreach, ape, dplyr, and eulerr.
-- GREML variance partitioning of the transcriptome (core vs accessory orthogroups, with 500 downsamples of 16 *S. cerevisiae* strains from Caudal et al. 2024) and of fitness (gene content, phylogenetic distance and expression, 99 bootstraps)
-  -Dependencies
+- Varpart_Fitness_Yeast_datasets.py: GREML variance partitioning of the transcriptome (core vs accessory orthogroups, with 500 downsamples of 16 *S. cerevisiae* strains from Caudal et al. 2024) and of fitness (gene content, phylogenetic distance and expression, 99 bootstraps)
+  - Dependencies
     - Python 3.6; Packages: sys, multiprocessing, contextlib, csv, gzip, os, scipy, numpy, sklearn, pandas, datetime, math, and random.
       
 ## Citation
