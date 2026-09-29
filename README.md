@@ -8,11 +8,10 @@ Pooled RNA-sequencing of 21 non-filamentous yeast species spanning all the taxon
 ![Phylogeny of the 21 species and their pool assignment](Study_design/Phylogeny_21_species_pools.png)
 
 ## Study design
-We chose the number of genes and species to profile with power analyses targeting the two main comparisons of the study: (1) the difference in expression variability between the core and accessory genomes (Wilcoxon rank-sum test, power > 0.8 once ~4,000 genes are profiled) and (2) per-orthogroup or per-pathway regressions on pairwise species comparisons (n = 20 species for a power of 0.8 at f = 0.14). The species were then drawn at random from the collection of Opulente et al. (2024) among non-filamentous, fast-growing species until every taxonomic order was represented. The code is in the *Study_design* folder:
-- Rscript -e "rmarkdown::render('Yeast_subphylum_pan_transcriptomic_study_design_Power_analysis.Rmd')"
-  - Dependencies: r/4.2.2 and packages "MKpower", "pwr", "assertthat", "readxl" and "rmarkdown"
-  - The species-selection section reads the Opulente et al. (2024) growth-rate table (GrowthRates_Yeasts.xlsx) and the NRRL catalog (fungi_in_catalog.xlsx), which need to be downloaded to the same folder
-  - The rendered report is *Yeast_subphylum_pan_transcriptomic_study_design_Power_analysis.html*
+We chose the number of genes and species to profile with power analyses targeting the two main comparisons of the study: (1) the difference in expression variability between the core and accessory genomes (Wilcoxon rank-sum test; ~4000 genes or orthogroups needed for power >= 0.8 at very low effect size) and (2) per-orthogroup or per-pathway regressions on pairwise species comparisons (n = 20 species for a power of 0.8 at f = 0.14). The species were then drawn at random from the collection of Opulente et al. (2024) among non-filamentous, fast-growing species until every taxonomic order was represented. 
+
+## Raw data
+The pre-demultiplexed RNA-seq data are archived in NCBI SRA (PRJNAXXXXXX).
 
 ## RNA sequencing
 Each species was grown separately to mid-log phase in YPD and total RNA was extracted in two biological replicates. The RNA of 7 species was pooled at equal concentration into each of three mixtures (M1, M2 and M3, at most 2 species of the same clade per pool), yielding 6 pooled YPD samples. The Centre for Applied Genomics (TCAG, Toronto) prepared poly-A-selected libraries and sequenced them on an Illumina NovaSeq X (10B flow cell, 150 bp paired-end, ≥ 50 M read pairs per library). The raw reads were stored in NCBI SRA (BioProject PRJNAXXXXXXX) and demultiplexed computationally to their species of origin with the scripts in the *RNA_sequencing* folder. The pipeline is customized for our Slurm environment (usernames, configuration, file paths, dependencies and resources need to be customized to your own computing environment):
@@ -39,26 +38,17 @@ Each species was grown separately to mid-log phase in YPD and total RNA was extr
 
 † Did not reach the minimum coverage of ~0.5 M binned reads (~100 reads per orthogroup) and was excluded from the downstream analyses, which use 16 species and 9,409 orthogroups.
 
-Note: the same pools were also sequenced after growth in YNB (samples M*_YNB_RNA_*, shown in the QC report), but only the 6 YPD libraries are analyzed here.
-
-## Processed data
-The *Data* folder contains the input and output tables of the downstream analyses:
-- *mtx_log2_1p_species_aggregate_gene_expr_FPKM_YPD.tsv*: log2(FPKM + 1) expression of the 9,409 orthogroups (columns) in the 16 species (rows), aggregated over the genes of each orthogroup
-- *Orthogroups.tsv.gz*: OrthoFinder orthogroups of Opulente et al. (2024), redistributed with attribution (gzipped to stay below the GitHub file size limit)
-- *Table_df_orthogroup_to_pathways_excluding_HumDis_And_Org_Sys.tsv*: orthogroup to KEGG pathway map (Human Diseases and Organismal Systems pathways excluded)
-- *Supp_table_yeast_sps_KEGG_pathways_evo_force.tsv*: evolutionary force call, p-value and power for each pathway
-- *SUPP_Table_Yeast_sps_paralogs_evo_trajectory_transcriptome.tsv*: ESD and R² slope markers and transcriptomic trajectory class (Cohesion, Divergence or unresolved) of the 229 expanding orthogroups
-- *SUPP_Table_pathway_paralog_trajectories_VS_literaure.tsv*: comparison of the trajectory calls with the fate of retained paralogs reported in the literature
-- *Supplementary_tables*: Tables C.2 (library summary), C.3 (pathway evolutionary force calls) and C.4 (expanding orthogroup trajectory calls) of the thesis as csv files
-
 ## Downstream analyses
 - Rscript Yeast_pan_transcriptomics_analysis.R *(to be added)*
   - Validation of the binned expression data (PCA distance and pairwise R² vs phylogenetic distance, replicates vs non-replicates; *QC_figures/Sample_pairs_expr_Rsq_for_replicates_vs_nonreplicates_in_YPD.svg*)
-  - GREML variance partitioning of the transcriptome (core vs accessory orthogroups, with 500 downsamples of 16 *S. cerevisiae* strains from Caudal et al. 2024) and of fitness (gene content, phylogenetic distance and expression, 99 bootstraps)
   - Evolutionary force acting on each pathway: R² vs phylogenetic distance slope and Bray-Curtis distances compared to 999 random orthogroup sets of the same size, with FDR correction and power estimates (pwr, MKpower)
   - Transcriptomic trajectory of expanding orthogroups (Jensen-Shannon ESD and R² slope Spearman markers over sliding copy number thresholds)
-  - Dependencies: r/4.2.2 and packages to be listed with the script
-
+  - Dependencies
+    - r/4.2.2; Libraries ggplot2, seqinr, RColorBrewer, randomcoloR, FD, vegan, gplots, lmPerm, ggpubr, gridExtra, cluster, tidyr, doParallel, foreach, ape, dplyr, and eulerr.
+- GREML variance partitioning of the transcriptome (core vs accessory orthogroups, with 500 downsamples of 16 *S. cerevisiae* strains from Caudal et al. 2024) and of fitness (gene content, phylogenetic distance and expression, 99 bootstraps)
+  -Dependencies
+    - Python 3.6; Packages: sys, multiprocessing, contextlib, csv, gzip, os, scipy, numpy, sklearn, pandas, datetime, math, and random.
+      
 ## Citation
 N'Guessan, A. (2026). *Pan-transcriptomics in the yeast subphylum: Variation in gene content occasionally enables transcriptomic divergence among broadly cohesive pathways.* Chapter 4 in PhD thesis, Department of Cell & Systems Biology, University of Toronto.
 
