@@ -1,0 +1,7 @@
+Sample,Pool,RNA_concentration_ng_per_uL,A260_A280_ratio,Library_type,Read_configuration,Requested_depth_M_read_pairs
+M1_YPD_RNA_1,M1,23.71,2.28,"Total RNA, poly-A/mRNA library",150 bp paired-end,50
+M1_YPD_RNA_2,M1,23.6,2.26,"Total RNA, poly-A/mRNA library",150 bp paired-end,50
+M2_YPD_RNA_1,M2,40.4,2.28,"Total RNA, poly-A/mRNA library",150 bp paired-end,50
+M2_YPD_RNA_2,M2,19.7,2.26,"Total RNA, poly-A/mRNA library",150 bp paired-end,50
+M3_YPD_RNA_1,M3,18.6,2.33,"Total RNA, poly-A/mRNA library",150 bp paired-end,50
+M3_YPD_RNA_2,M3,58.6,2.31,"Total RNA, poly-A/mRNA library",150 bp paired-end,50
