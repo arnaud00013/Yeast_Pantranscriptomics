@@ -3,7 +3,8 @@
 <!-- Replace with the Zenodo badge after the first GitHub release is archived:
 [![DOI](https://zenodo.org/badge/XXXXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX) -->
 
-Pooled RNA-sequencing of 21 non-filamentous yeast species spanning all the taxonomic orders of the subphylum *Saccharomycotina*, grown in rich medium (YPD). Pre-print: biorxiv DOI:XXXXXXXX.
+This project profiles gene expression across the yeast subphylum Saccharomycotina to characterize how the transcriptome evolves across gene families and evolutionary timescales spanning hundreds of millions of years. We selected 21 non-filamentous species spanning 12 taxonomic orders from the collection of Opulente et al. (2024). Each species was grown separately to log phase in rich medium (YPD; 1% yeast extract, 2% peptone, 2% dextrose), and total RNA was extracted in two biological replicates. RNA from seven species (mostly drawn from different clades) was pooled at equal input concentration into each of three species mixtures (M1, M2, M3), yielding six pooled poly-A-selected RNA-seq libraries sequenced on an Illumina NovaSeq X instrument (10B flow cell; 150 bp paired-end; ≥50 million read pairs
+per library). Pre-print: biorxiv DOI:XXXXXXXX.
 
 ![Phylogeny of the 21 species and their pool assignment](Phylogeny_21_species_pools.png)
 
