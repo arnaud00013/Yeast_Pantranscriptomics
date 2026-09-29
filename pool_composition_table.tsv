@@ -1,0 +1,22 @@
+pool_id	species	NRRL_strain_symbol	taxonomic_order	GenBank_assembly_accession	y1000p_id
+M1	Ambrosiozyma oregonensis	Y-6106	Pichiales	PPKY00000000	yHMPu5000034946
+M1	Candida ulmi	Y-2694	Phaffomycetales	JAJMLN000000000	yHMPu5000038075
+M1	Hanseniaspora opuntiae	Y-27512	Saccharomycodales	JAJLSA000000000	yHMPu5000034958
+M1	Lipomyces kononenkoae	Y-63818	Lipomycetales	PPJW00000000	yHMPu5000034760
+M1	Meyerozyma caribbica	Y-27274	Serinales	PPNE00000000	yHMPu5000035662
+M1	Saccharomycopsis amapae	Y-17845	Ascoideales	JAKTYX000000000	yHMPu5000041799
+M1	Schwanniomyces capriottii	NRRL-Y-7423	Serinales	JAKTYZ000000000	yHMPu5000041792
+M2	Blastobotrys peoriensis	YB-2290	Dipodascales	PPJJ00000000	yHMPu5000034671
+M2	Candida blattariae	Y-27703	Serinales	JAKTTU000000000	yHMPu5000037917
+M2	Cyberlindnera japonica	YB-2750	Phaffomycetales	JAKTVL000000000	yHMPu5000035700
+M2	Hanseniaspora nectarophila	Y-63754	Saccharomycodales	JAJMDJ000000000	yHMPu5000035693
+M2	Nakazawaea wyomingensis	YB-2152	Alaninales	JAJLSQ000000000	yHMPu5000034924
+M2	Wickerhamomyces anomalus	Y-366	Phaffomycetales	JAJMFG000000000	yHMPu5000035273
+M2	Wickerhamomyces strasburgensis	Y-2383	Phaffomycetales	JAJMFO000000000	yHMPu5000035257
+M3	Candida dosseyi	Y-27950	Serinales	JAJMDA000000000	yHMPu5000035709
+M3	Cyberlindnera mrakii	Y-1364	Phaffomycetales	PPLH00000000	yHMPu5000034978
+M3	Kodamaea ohmeri	Y-1932	Serinales	PPNN00000000	yHMPu5000035677
+M3	Nakazawaea peltata	NRRL-Y-7303	Alaninales	JAJLST000000000	yHMPu5000034921
+M3	Saturnispora besseyi	YB-4711	Pichiales	JAJLXR000000000	yHDO580
+M3	Schwanniomyces polymorphus	Y-2022	Serinales	JAKVQW000000000	yHMPu5000041780
+M3	Sugiyamaella smithiae	NRRL-Y-17849	Alloascoideales	JAKTRV000000000	yHMPu5000034574
