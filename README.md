@@ -3,7 +3,7 @@
 <!-- Replace with the Zenodo badge after the first GitHub release is archived:
 [![DOI](https://zenodo.org/badge/XXXXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX) -->
 
-Pooled RNA-sequencing of 21 non-filamentous yeast species spanning all the taxonomic orders of the subphylum *Saccharomycotina*, grown in rich medium (YPD), showing that most biological pathways evolve while conserving their transcriptomic cohesion and that variation in gene content only occasionally enables transcriptomic divergence, mostly in pathways of low prevalence across the subphylum.
+Pooled RNA-sequencing of 21 non-filamentous yeast species spanning all the taxonomic orders of the subphylum *Saccharomycotina*, grown in rich medium (YPD). Pre-print: biorxiv DOI:XXXXXXXX.
 
 ![Phylogeny of the 21 species and their pool assignment](Phylogeny_21_species_pools.png)
 
